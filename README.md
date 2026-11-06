@@ -1,16 +1,43 @@
 # Covenant Contracts
 
+[![CI](https://github.com/motron-games-world/covenant-contracts/actions/workflows/ci.yml/badge.svg)](https://github.com/motron-games-world/covenant-contracts/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+Soroban smart contract for **Covenant**, a milestone-based escrow protocol for freelance
+work on Stellar. Clients lock payment for a job into escrow, release it milestone by
+milestone as work is approved, and either party can raise a dispute that the protocol
+admin (or an arbiter panel, for larger jobs) settles. Clients can also pay a tip or bonus
+that is transferred directly to the freelancer and recorded for reputation and analytics.
+
+Covenant is split across three repositories:
+
+| Repo | Role |
+| --- | --- |
+| **covenant-contracts** (this repo) | Soroban smart contract — the source of truth for escrow state |
+| [covenant-backend](https://github.com/motron-games-world/covenant-backend) | REST API mirroring the contract's state machine |
+| [covenant-frontend](https://github.com/motron-games-world/covenant-frontend) | Web app for clients and freelancers |
+
+## Contents
+
+- [Live](#live)
+- [Deployments](#deployments)
+- [Contract interface](#contract-interface-contractsescrow)
+- [Status flow](#status-flow)
+- [Storage TTL policy](#storage-ttl-policy)
+- [Arithmetic](#arithmetic)
+- [Token transfers](#token-transfers)
+- [Events](#events)
+- [Reputation governance & audit trail](#reputation-governance--audit-trail)
+- [Error catalog](#error-catalog)
+- [Build and test](#build-and-test)
+- [Deploy](#deploy)
+- [License](#license)
+
 ## Live
 
 Live deployment: pending under new branding.
 
 - Contract (testnet): [`CCZMIVUBMG5SBC47SDTC32RWLBJ2HW2DCFVWJEOKCH2IFJBZGBKTXK5W`](https://stellar.expert/explorer/testnet/contract/CCZMIVUBMG5SBC47SDTC32RWLBJ2HW2DCFVWJEOKCH2IFJBZGBKTXK5W)
-
-Soroban smart contract for the Covenant freelancer escrow protocol on Stellar.
-Clients lock payment for a job into escrow, release it milestone by milestone as
-work is approved, and either party can raise a dispute that the protocol admin settles.
-Clients can also pay a tip or bonus that is transferred directly to the freelancer and
-recorded for reputation and analytics.
 
 ## Deployments
 
@@ -255,4 +282,4 @@ stellar contract invoke --id <CONTRACT_ID> --source <key> --network testnet \
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
