@@ -1,10 +1,10 @@
 # Milestone Invariants
 
 This document lists the invariants that hold for the `Milestone` and
-per-milestone lifecycle logic in the TalentTrust escrow contract — properties
+per-milestone lifecycle logic in the Covenant escrow contract — properties
 that are always true, and the exact code location that enforces each one.
 
-Scope: `Talenttrust/Talenttrust-Contracts` only. Source of truth for this
+Scope: `Covenant/Covenant-Contracts` only. Source of truth for this
 document is `contracts/escrow/src/milestones.rs` (all invariants below are
 verified directly against that file, not inferred from other docs).
 

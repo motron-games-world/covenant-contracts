@@ -1,6 +1,6 @@
 # Mainnet Readiness Runbook and Checklist
 
-This document explains what "mainnet ready" means for the Talenttrust Escrow contract, details the verification flags tracked in the `ReadinessChecklist`, and outlines the step-by-step workflow that operators must follow to prepare and verify a fresh contract instance for production deployment on Stellar Mainnet.
+This document explains what "mainnet ready" means for the Covenant Escrow contract, details the verification flags tracked in the `ReadinessChecklist`, and outlines the step-by-step workflow that operators must follow to prepare and verify a fresh contract instance for production deployment on Stellar Mainnet.
 
 ---
 

@@ -1,13 +1,12 @@
-# TalentTrust Contracts
+# Covenant Contracts
 
 ## Live
 
-- Website: https://talenttrust-frontend.vercel.app
-- Docs: https://talenttrust-frontend.vercel.app/docs
-- API: https://talenttrust-backend.vercel.app (docs at [/docs](https://talenttrust-backend.vercel.app/docs))
+Live deployment: pending under new branding.
+
 - Contract (testnet): [`CCZMIVUBMG5SBC47SDTC32RWLBJ2HW2DCFVWJEOKCH2IFJBZGBKTXK5W`](https://stellar.expert/explorer/testnet/contract/CCZMIVUBMG5SBC47SDTC32RWLBJ2HW2DCFVWJEOKCH2IFJBZGBKTXK5W)
 
-Soroban smart contract for the TalentTrust freelancer escrow protocol on Stellar.
+Soroban smart contract for the Covenant freelancer escrow protocol on Stellar.
 Clients lock payment for a job into escrow, release it milestone by milestone as
 work is approved, and either party can raise a dispute that the protocol admin settles.
 Clients can also pay a tip or bonus that is transferred directly to the freelancer and

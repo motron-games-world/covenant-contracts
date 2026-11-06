@@ -1,6 +1,6 @@
 # Contracts Error Reference
 
-This document lists every `EscrowError` code emitted by the TalentTrust escrow smart contract, explains the condition that triggers each code, describes how to avoid it, and cross-references the entrypoints that can return it.
+This document lists every `EscrowError` code emitted by the Covenant escrow smart contract, explains the condition that triggers each code, describes how to avoid it, and cross-references the entrypoints that can return it.
 
 The canonical definition lives in [`contracts/escrow/src/lib.rs`](../contracts/escrow/src/lib.rs) (the `EscrowError` enum).
 

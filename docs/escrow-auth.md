@@ -1,12 +1,12 @@
 # Escrow Authorization and Access Control Rules
 
-This document specifies the authorization, access control rules, role privileges, allowed state transitions, and failure/rejection conditions for the TalentTrust Escrow smart contract (`contracts/escrow`).
+This document specifies the authorization, access control rules, role privileges, allowed state transitions, and failure/rejection conditions for the Covenant Escrow smart contract (`contracts/escrow`).
 
 ---
 
 ## 1. Overview
 
-The TalentTrust escrow contract manages milestone-based payments, client migrations, dispute resolution, reputation scoring, and protocol governance on Soroban (Stellar). To protect user funds and maintain system safety, every state-modifying entrypoint enforces strict authorization guards using:
+The Covenant escrow contract manages milestone-based payments, client migrations, dispute resolution, reputation scoring, and protocol governance on Soroban (Stellar). To protect user funds and maintain system safety, every state-modifying entrypoint enforces strict authorization guards using:
 
 1. **Soroban `require_auth()` Authentication**: Ensures transactions are cryptographically signed by the required participant address before any state mutation occurs.
 2. **Role-Based Authorization**: Restricts function execution to specific roles (Governance Admin, Client, Freelancer, Arbiter, Proposed Admin, or Proposed Client).

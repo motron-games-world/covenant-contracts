@@ -8,7 +8,7 @@
 
 ## Overview
 
-The TalentTrust escrow contract now supports **per-milestone refunds** for unreleased milestones. This allows clients to selectively refund specific milestones back to their account while preserving the state of released milestones.
+The Covenant escrow contract now supports **per-milestone refunds** for unreleased milestones. This allows clients to selectively refund specific milestones back to their account while preserving the state of released milestones.
 
 ### Key Features
 
@@ -350,7 +350,7 @@ for each existing_contract {
 ## References
 
 - [Soroban Documentation](https://soroban.stellar.org/docs)
-- [TalentTrust Escrow Architecture](./architecture.md)
+- [Covenant Escrow Architecture](./architecture.md)
 - [Milestone Schedule Documentation](./milestone_schedule.md)
 - [Security Analysis](./SECURITY_ANALYSIS.md)
 

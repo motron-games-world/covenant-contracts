@@ -1,6 +1,6 @@
 # Milestones & Escrow Error Codes Catalog
 
-This document provides a comprehensive reference for all typed error codes (`Error` / `EscrowError`) defined in the Talenttrust Escrow contract (`contracts/escrow/src/types.rs`). It lists each numerical error code, when it is triggered, how to avoid it, and cross-references the relevant public entrypoints.
+This document provides a comprehensive reference for all typed error codes (`Error` / `EscrowError`) defined in the Covenant Escrow contract (`contracts/escrow/src/types.rs`). It lists each numerical error code, when it is triggered, how to avoid it, and cross-references the relevant public entrypoints.
 
 ---
 

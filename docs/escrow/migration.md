@@ -11,4 +11,4 @@ admin/pause/emergency keys, and reputation keys.
 
 Forward-compatible storage migration remains planned work. Until a dedicated
 implementation issue exists, the documentation drift is tracked by
-[#341](https://github.com/Talenttrust/Talenttrust-Contracts/issues/341).
+[#341](https://github.com/Covenant/Covenant-Contracts/issues/341).

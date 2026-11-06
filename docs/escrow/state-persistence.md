@@ -1,9 +1,9 @@
-# Storage Layout Reference — TalentTrust Escrow Contract
+# Storage Layout Reference — Covenant Escrow Contract
 
 This document maps the currently implemented `DataKey` storage used by
 `contracts/escrow/src/lib.rs`. A fuller key-by-key reference, including
 declared-but-unused keys, is tracked in
-[#342](https://github.com/Talenttrust/Talenttrust-Contracts/issues/342).
+[#342](https://github.com/Covenant/Covenant-Contracts/issues/342).
 
 ## Live Storage Keys
 
@@ -39,8 +39,8 @@ them as a complete feature:
 - `AccumulatedProtocolFees`
 
 Protocol fee implementation is tracked in
-[#313](https://github.com/Talenttrust/Talenttrust-Contracts/issues/313) and
-[#314](https://github.com/Talenttrust/Talenttrust-Contracts/issues/314).
+[#313](https://github.com/Covenant/Covenant-Contracts/issues/313) and
+[#314](https://github.com/Covenant/Covenant-Contracts/issues/314).
 
 ## Milestone Released State — Single Source of Truth
 

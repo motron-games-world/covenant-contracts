@@ -3,7 +3,7 @@
 ## Overview
 
 `utils::now_seconds` is the **single source of truth** for wall-clock time in the
-TalentTrust escrow contract.  Every entrypoint that needs absolute time must
+Covenant escrow contract.  Every entrypoint that needs absolute time must
 call this helper; direct `env.ledger().timestamp()` calls outside `utils.rs` are
 forbidden.
 

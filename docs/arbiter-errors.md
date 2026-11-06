@@ -1,6 +1,6 @@
 # Arbiter Error Codes
 
-This document catalogs the `EscrowError` codes specifically related to the Arbiter role and dispute resolution in the Talent Trust escrow contracts.
+This document catalogs the `EscrowError` codes specifically related to the Arbiter role and dispute resolution in the Covenant escrow contracts.
 
 | Code | Error Name | Fired By Entrypoint(s) | Trigger Condition | How to Avoid |
 | ---- | ---------- | ---------------------- | ----------------- | ------------ |

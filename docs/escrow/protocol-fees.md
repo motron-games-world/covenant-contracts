@@ -1,6 +1,6 @@
 # Protocol Fee Model
 
-This document is the authoritative reference for the TalentTrust escrow protocol fee
+This document is the authoritative reference for the Covenant escrow protocol fee
 lifecycle — from governance configuration through per-milestone accrual to treasury
 withdrawal.
 

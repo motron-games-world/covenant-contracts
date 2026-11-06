@@ -1,7 +1,7 @@
 # Milestone Threat Model
 
 This document covers the trust assumptions, attacker capabilities, and
-mitigations specific to the milestone subsystem of the TalentTrust escrow
+mitigations specific to the milestone subsystem of the Covenant escrow
 contract. It complements the broader escrow threat model at
 [`docs/escrow/threat-model.md`](escrow/threat-model.md) and the authorization
 reference at [`docs/escrow/authorization.md`](escrow/authorization.md).
@@ -353,8 +353,8 @@ enforcement points in the source code.
 | Gap | Status | Tracking |
 |---|---|---|
 | Approval revocation | Not implemented — a party cannot retract an approval once recorded before TTL expires | Untracked |
-| Protocol fee withdrawal | Accumulation is implemented; withdrawal entrypoint is planned | [#314](https://github.com/Talenttrust/Talenttrust-Contracts/issues/314) |
-| Two-step admin transfer | Single admin controls pause/emergency; no key rotation with timelock | [#318](https://github.com/Talenttrust/Talenttrust-Contracts/issues/318) |
+| Protocol fee withdrawal | Accumulation is implemented; withdrawal entrypoint is planned | [#314](https://github.com/Covenant/Covenant-Contracts/issues/314) |
+| Two-step admin transfer | Single admin controls pause/emergency; no key rotation with timelock | [#318](https://github.com/Covenant/Covenant-Contracts/issues/318) |
 | SAC token custody audit | Token transfer correctness is outside this contract's scope | See [`docs/escrow/sac-custody.md`](escrow/sac-custody.md) |
 | On-chain deadline enforcement | Deadlines are metadata only; timeout refunds require a client-initiated call | Informational |
 

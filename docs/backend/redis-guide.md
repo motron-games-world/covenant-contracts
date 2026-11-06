@@ -1,6 +1,6 @@
 # Redis Developer Guide
 
-This guide explains how Redis is utilized in the TalentTrust Backend, the distinction between real and mocked Redis behavior, and how to handle Redis in different environments (Local, CI, and Testing).
+This guide explains how Redis is utilized in the Covenant Backend, the distinction between real and mocked Redis behavior, and how to handle Redis in different environments (Local, CI, and Testing).
 
 ## 1. When Redis is Required
 

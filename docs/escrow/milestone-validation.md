@@ -1,7 +1,7 @@
 # Escrow Contract: Milestone Validation and Approval Flow
 
 ## Overview
-This document describes the milestone validation logic and approval flow implemented in the escrow smart contract for the TalentTrust protocol.
+This document describes the milestone validation logic and approval flow implemented in the escrow smart contract for the Covenant protocol.
 
 ## Approval Flow Architecture
 

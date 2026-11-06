@@ -21,7 +21,7 @@
 
 ## Overview
 
-This document provides a comprehensive reference for the authorization and access control rules enforced by the TalentTrust escrow smart contract. It describes:
+This document provides a comprehensive reference for the authorization and access control rules enforced by the Covenant escrow smart contract. It describes:
 
 - **Who** can call each entrypoint
 - **When** (in which contract states) operations are allowed
@@ -673,6 +673,6 @@ All authorization checks fail-closed:
 
 ---
 
-**Document Maintained By:** TalentTrust Development Team  
+**Document Maintained By:** Covenant Development Team  
 **Last Verification Against Source:** 2026-07-27  
-**Contract Repository:** https://github.com/Talenttrust/Talenttrust-Contracts
+**Contract Repository:** https://github.com/Covenant/Covenant-Contracts

@@ -1,6 +1,6 @@
 # Arbiter Authorization and Access Rules
 
-This document describes every entrypoint in the TalentTrust escrow contract
+This document describes every entrypoint in the Covenant escrow contract
 that the arbiter role may or must interact with, together with the exact
 authorization checks enforced in source. All rules are verified against
 `contracts/escrow/src/lib.rs`, `contracts/escrow/src/approvals.rs`,

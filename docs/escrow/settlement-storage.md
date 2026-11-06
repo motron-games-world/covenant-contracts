@@ -1,7 +1,7 @@
 # Settlement Storage Layout and TTL Policy
 
 This document describes the persistent storage layout for settlement-related state
-in the TalentTrust Escrow contract: the bound token address, the protocol fee
+in the Covenant Escrow contract: the bound token address, the protocol fee
 configuration, and the accumulated fee balance.
 
 **Source of truth:** [`contracts/escrow/src/types.rs`](../../contracts/escrow/src/types.rs)

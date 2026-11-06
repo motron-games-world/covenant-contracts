@@ -9,7 +9,7 @@
 ## Overview
 
 The **Release Readiness Checklist** is an on-chain mechanism that automatically
-tracks whether a TalentTrust escrow agreement has passed all deployment,
+tracks whether a Covenant escrow agreement has passed all deployment,
 verification, and post-deploy monitoring gates before funds can be released.
 
 Checklist state is stored as a `ReleaseChecklist` struct (one per contract ID)

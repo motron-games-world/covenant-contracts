@@ -1,7 +1,7 @@
 # Escrow Contract Fuzzing and Security Assumptions
 
 ## Threat Scenarios
-The TalentTrust Escrow contract faces several threat scenarios related to malicious input data during entrypoint invocation:
+The Covenant Escrow contract faces several threat scenarios related to malicious input data during entrypoint invocation:
 1. **Invalid Milestones:** An attacker providing an empty array of milestones or negative amounts to `create_contract` could break the internal accounting or result in non-withdrawable funds.
 2. **Invalid Deposits:** Supplying zero or negative amounts to `deposit_funds` could manipulate the recorded balance or trigger underflow panics during balance checks.
 3. **Out-of-Bounds Reputation:** Submitting rating scores outside the accepted bounds (1-5) could manipulate average freelancer reputation scoring algorithms downstream.

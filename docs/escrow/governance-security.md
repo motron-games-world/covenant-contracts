@@ -93,6 +93,6 @@ serialized race orders, migration, retries, authorization and boundary checks.
 ## Planned Governance Work
 
 - Governed parameter setter/readiness wiring:
-  [#323](https://github.com/Talenttrust/Talenttrust-Contracts/issues/323)
+  [#323](https://github.com/Covenant/Covenant-Contracts/issues/323)
 - Audit events for future fee/admin changes:
-  [#340](https://github.com/Talenttrust/Talenttrust-Contracts/issues/340)
+  [#340](https://github.com/Covenant/Covenant-Contracts/issues/340)

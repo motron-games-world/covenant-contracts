@@ -1,6 +1,6 @@
 # Authorization Storage Layout and TTL Policy
 
-This document describes the storage schema, value shapes, and time-to-live (TTL) expiration policy for authorization data in the TalentTrust escrow contract. Authorization storage includes two categories: **governance authorization** (admin roles and pending proposals) and **milestone release approvals**.
+This document describes the storage schema, value shapes, and time-to-live (TTL) expiration policy for authorization data in the Covenant escrow contract. Authorization storage includes two categories: **governance authorization** (admin roles and pending proposals) and **milestone release approvals**.
 
 ## Storage Architecture Overview
 

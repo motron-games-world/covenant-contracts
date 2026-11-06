@@ -1,6 +1,6 @@
 # SAC Custody and Settlement-Token Lifecycle
 
-This document describes the custody model for the TalentTrust Escrow contract: which
+This document describes the custody model for the Covenant Escrow contract: which
 entrypoint moves funds in which direction, the one-token-per-escrow assumption, where
 accrued protocol fees reside until withdrawn, and the accounting invariant that
 integrators and auditors can rely on.

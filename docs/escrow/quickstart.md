@@ -1,6 +1,6 @@
 # Escrow Integrator Quickstart
 
-A copy-pasteable, end-to-end walkthrough that takes the **TalentTrust escrow
+A copy-pasteable, end-to-end walkthrough that takes the **Covenant escrow
 contract** from a freshly cloned repository to a **funded, approved, and
 released** milestone on Stellar testnet.
 

@@ -1,7 +1,7 @@
 # Settlement Authorization Rules
 
 This document defines who may call what, in which contract state, for every
-settlement-relevant entrypoint in the TalentTrust Escrow contract.
+settlement-relevant entrypoint in the Covenant Escrow contract.
 
 ## Roles
 

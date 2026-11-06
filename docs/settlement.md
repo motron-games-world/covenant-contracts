@@ -1,6 +1,6 @@
 # Settlement Model
 
-This document outlines the settlement data model, the core accounting invariants, and the entrypoints that mutate custody balances within the Talenttrust Escrow contracts. Understanding these mechanics is essential for auditors and integrators interacting with the escrow lifecycle.
+This document outlines the settlement data model, the core accounting invariants, and the entrypoints that mutate custody balances within the Covenant Escrow contracts. Understanding these mechanics is essential for auditors and integrators interacting with the escrow lifecycle.
 
 ## Settlement Data Model
 

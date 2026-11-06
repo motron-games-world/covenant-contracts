@@ -1,6 +1,6 @@
 # Contracts Storage Layout & TTL Policy
 
-This document defines the validation boundaries for the on-chain storage layout used by the TalentTrust
+This document defines the validation boundaries for the on-chain storage layout used by the Covenant
 escrow contract on Soroban: every storage key, its value shape, which Soroban
 storage type it lives in (`persistent` vs `temporary`), and the deterministic
 TTL / bump strategy that governs its lifetime.

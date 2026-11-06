@@ -1,4 +1,4 @@
-//! TalentTrust escrow contract for milestone-based freelancer payments on Stellar (Soroban).
+//! Covenant escrow contract for milestone-based freelancer payments on Stellar (Soroban).
 //!
 //! Lifecycle:
 //! 1. `initialize(admin)` once after deployment.

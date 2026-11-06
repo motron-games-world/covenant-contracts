@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Talenttrust Escrow contract provides a comprehensive dispute resolution mechanism that allows contract parties (client and freelancer) to escalate disagreements to an assigned arbiter. When a dispute arises, the arbiter can decide how to fairly distribute the remaining escrowed funds between the parties.
+The Covenant Escrow contract provides a comprehensive dispute resolution mechanism that allows contract parties (client and freelancer) to escalate disagreements to an assigned arbiter. When a dispute arises, the arbiter can decide how to fairly distribute the remaining escrowed funds between the parties.
 
 ## Architecture
 

@@ -1,7 +1,7 @@
 # Milestones Storage Layout and TTL/Bump Policy
 
 This document describes the on-chain storage layout for milestone data in the
-TalentTrust escrow contract, including the key shapes, stored value types, and
+Covenant escrow contract, including the key shapes, stored value types, and
 the TTL and bump strategy that keeps active contracts alive while allowing
 stale ones to be evicted automatically.
 

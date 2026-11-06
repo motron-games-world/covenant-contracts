@@ -68,11 +68,11 @@ The contract enforces the following bounds on milestone amounts:
 
 ## Planned Security Work
 
-- Two-step admin transfer: [#318](https://github.com/Talenttrust/Talenttrust-Contracts/issues/318)
-- Protocol fee extraction/withdrawal interface: [#314](https://github.com/Talenttrust/Talenttrust-Contracts/issues/314)
-- Governed parameter setter/readiness wiring: [#323](https://github.com/Talenttrust/Talenttrust-Contracts/issues/323)
-- Structured deposit and fee events: [#336](https://github.com/Talenttrust/Talenttrust-Contracts/issues/336)
-- Canonical storage-key reference: [#342](https://github.com/Talenttrust/Talenttrust-Contracts/issues/342)
+- Two-step admin transfer: [#318](https://github.com/Covenant/Covenant-Contracts/issues/318)
+- Protocol fee extraction/withdrawal interface: [#314](https://github.com/Covenant/Covenant-Contracts/issues/314)
+- Governed parameter setter/readiness wiring: [#323](https://github.com/Covenant/Covenant-Contracts/issues/323)
+- Structured deposit and fee events: [#336](https://github.com/Covenant/Covenant-Contracts/issues/336)
+- Canonical storage-key reference: [#342](https://github.com/Covenant/Covenant-Contracts/issues/342)
 
 ## Reviewer Checklist
 

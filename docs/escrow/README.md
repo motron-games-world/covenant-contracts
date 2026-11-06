@@ -605,20 +605,20 @@ Test coverage is provided in `contracts/escrow/src/test/dispute.rs`.
 These features are not implemented entrypoints today:
 
 - Two-step admin transfer: planned in
-  [#318](https://github.com/Talenttrust/Talenttrust-Contracts/issues/318).
+  [#318](https://github.com/Covenant/Covenant-Contracts/issues/318).
 - Protocol fee treasury withdrawal: planned in
-  [#314](https://github.com/Talenttrust/Talenttrust-Contracts/issues/314).
+  [#314](https://github.com/Covenant/Covenant-Contracts/issues/314).
   Note: fee accumulation is now wired into `release_milestone` (issue #439).
   A `withdraw_protocol_fees` entrypoint remains unimplemented pending the
   dedicated fee-treasury issue.
 - Governed parameter setter/readiness wiring: planned in
-  [#323](https://github.com/Talenttrust/Talenttrust-Contracts/issues/323).
+  [#323](https://github.com/Covenant/Covenant-Contracts/issues/323).
 - `refund_unreleased_milestones` SAC refund path (the function exists but
   deferring the `token::Client::transfer` to the client until the
   refund-treasury issue picks up tracking).
 - `migrate_state` / `StateV1` / `StateV2` migration flow: not implemented;
   tracked by this reconciliation issue
-  [#341](https://github.com/Talenttrust/Talenttrust-Contracts/issues/341)
+  [#341](https://github.com/Covenant/Covenant-Contracts/issues/341)
   until a dedicated implementation issue exists.
 
 Any documentation that describes one of these items as available should be

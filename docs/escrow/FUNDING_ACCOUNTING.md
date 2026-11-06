@@ -37,5 +37,5 @@ The decision boundaries for deposits are validated as follows:
 
 Protocol fee deduction, accumulated protocol fees, and protocol fee withdrawal
 are planned in
-[#313](https://github.com/Talenttrust/Talenttrust-Contracts/issues/313) and
-[#314](https://github.com/Talenttrust/Talenttrust-Contracts/issues/314).
+[#313](https://github.com/Covenant/Covenant-Contracts/issues/313) and
+[#314](https://github.com/Covenant/Covenant-Contracts/issues/314).

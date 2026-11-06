@@ -30,4 +30,4 @@ The live escrow contract uses explicit status writes inside
 
 Dispute, refund, approval-expiry, and finalization transitions are not
 implemented in `lib.rs`. `finalize_contract` is tracked in
-[#320](https://github.com/Talenttrust/Talenttrust-Contracts/issues/320).
+[#320](https://github.com/Covenant/Covenant-Contracts/issues/320).

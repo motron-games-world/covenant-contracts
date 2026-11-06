@@ -29,14 +29,14 @@ This threat model reflects the public API currently implemented in
 ## Planned Controls
 
 - Two-step admin transfer:
-  [#318](https://github.com/Talenttrust/Talenttrust-Contracts/issues/318)
+  [#318](https://github.com/Covenant/Covenant-Contracts/issues/318)
 - Protocol fee accounting and withdrawal:
-  [#313](https://github.com/Talenttrust/Talenttrust-Contracts/issues/313),
-  [#314](https://github.com/Talenttrust/Talenttrust-Contracts/issues/314)
+  [#313](https://github.com/Covenant/Covenant-Contracts/issues/313),
+  [#314](https://github.com/Covenant/Covenant-Contracts/issues/314)
 - Finalization:
-  [#320](https://github.com/Talenttrust/Talenttrust-Contracts/issues/320)
+  [#320](https://github.com/Covenant/Covenant-Contracts/issues/320)
 - Governed parameter setter:
-  [#323](https://github.com/Talenttrust/Talenttrust-Contracts/issues/323)
+  [#323](https://github.com/Covenant/Covenant-Contracts/issues/323)
 
 ## Reviewer Checklist
 

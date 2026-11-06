@@ -159,19 +159,19 @@ implemented in `lib.rs`.
 ## Planned Features
 
 - Two-step admin transfer:
-  [#318](https://github.com/Talenttrust/Talenttrust-Contracts/issues/318)
+  [#318](https://github.com/Covenant/Covenant-Contracts/issues/318)
 - Protocol fee deduction:
-  [#313](https://github.com/Talenttrust/Talenttrust-Contracts/issues/313)
+  [#313](https://github.com/Covenant/Covenant-Contracts/issues/313)
 - Protocol fee withdrawal:
-  [#314](https://github.com/Talenttrust/Talenttrust-Contracts/issues/314)
+  [#314](https://github.com/Covenant/Covenant-Contracts/issues/314)
 - Governed parameter setter/readiness wiring:
-  [#323](https://github.com/Talenttrust/Talenttrust-Contracts/issues/323)
+  [#323](https://github.com/Covenant/Covenant-Contracts/issues/323)
 - Structured deposit and fee events:
-  [#336](https://github.com/Talenttrust/Talenttrust-Contracts/issues/336)
+  [#336](https://github.com/Covenant/Covenant-Contracts/issues/336)
 - Canonical storage-key documentation:
-  [#342](https://github.com/Talenttrust/Talenttrust-Contracts/issues/342)
+  [#342](https://github.com/Covenant/Covenant-Contracts/issues/342)
 - `migrate_state` / `StateV1` / `StateV2` migration flow:
-  [#341](https://github.com/Talenttrust/Talenttrust-Contracts/issues/341)
+  [#341](https://github.com/Covenant/Covenant-Contracts/issues/341)
 
 ## Security Notes
 

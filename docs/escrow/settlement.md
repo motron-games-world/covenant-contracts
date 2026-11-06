@@ -1,6 +1,6 @@
 # Escrow Settlement Token Flow
 
-This document details the design, life cycle, and security model of the on-chain settlement token transfers implemented for the TalentTrust Escrow contract.
+This document details the design, life cycle, and security model of the on-chain settlement token transfers implemented for the Covenant Escrow contract.
 
 ## Overview
 
