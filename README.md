@@ -17,15 +17,8 @@ Covenant is split across three repositories:
 | [covenant-backend](https://github.com/motron-games-world/covenant-backend) | REST API mirroring the contract's state machine |
 | [covenant-frontend](https://github.com/motron-games-world/covenant-frontend) | Web app for clients and freelancers |
 
-## Origin
-
-Covenant began as a fork of [Talenttrust-Contracts](https://github.com/Talenttrust/Talenttrust-Contracts).
-The full commit history and original authorship are preserved; this repository is now
-maintained independently under the Covenant name.
-
 ## Contents
 
-- [Origin](#origin)
 - [Live](#live)
 - [Deployments](#deployments)
 - [Contract interface](#contract-interface-contractsescrow)
@@ -42,8 +35,7 @@ maintained independently under the Covenant name.
 
 ## Live
 
-- Contract (testnet): [`CCEEQECMQXMWPZYIT4QOKB2LM72IGXR3B4NE4H2NRRI4U3GRMO2I7KHA`](https://stellar.expert/explorer/testnet/contract/CCEEQECMQXMWPZYIT4QOKB2LM72IGXR3B4NE4H2NRRI4U3GRMO2I7KHA) — deployed and administered independently of TalentTrust
-- Website/API: pending under new branding (see [covenant-backend](https://github.com/motron-games-world/covenant-backend) / [covenant-frontend](https://github.com/motron-games-world/covenant-frontend))
+- Contract (testnet): [`CCEEQECMQXMWPZYIT4QOKB2LM72IGXR3B4NE4H2NRRI4U3GRMO2I7KHA`](https://stellar.expert/explorer/testnet/contract/CCEEQECMQXMWPZYIT4QOKB2LM72IGXR3B4NE4H2NRRI4U3GRMO2I7KHA)
 
 ## Deployments
 
@@ -289,3 +281,7 @@ stellar contract invoke --id <CONTRACT_ID> --source <key> --network testnet \
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+Originally forked from [Talenttrust-Contracts](https://github.com/Talenttrust/Talenttrust-Contracts), since repurposed.
