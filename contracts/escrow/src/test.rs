@@ -12,6 +12,35 @@ use soroban_sdk::{
 /// milestone used below is >= `MIN_MILESTONE_AMOUNT`.
 const U: i128 = MIN_MILESTONE_AMOUNT;
 
+/// `Events::all()` returns a `ContractEvents` struct as of soroban-sdk 25
+/// (previously a plain `Vec<(Address, Vec<Val>, Val)>`). This rebuilds the
+/// old shape from the new one's underlying XDR, so the rest of this file's
+/// event-inspection helpers and assertions didn't need to change.
+fn captured_events(env: &Env) -> std::vec::Vec<(Address, Vec<soroban_sdk::Val>, soroban_sdk::Val)> {
+    use soroban_sdk::xdr::{ContractEventBody, ScAddress, ScVal};
+    env.events()
+        .all()
+        .events()
+        .iter()
+        .map(|e| {
+            let addr = Address::try_from_val(
+                env,
+                &ScVal::Address(ScAddress::Contract(
+                    e.contract_id.clone().expect("contract event missing contract_id"),
+                )),
+            )
+            .unwrap();
+            let ContractEventBody::V0(body) = &e.body;
+            let mut topics = Vec::new(env);
+            for t in body.topics.iter() {
+                topics.push_back(soroban_sdk::Val::try_from_val(env, t).unwrap());
+            }
+            let data = soroban_sdk::Val::try_from_val(env, &body.data).unwrap();
+            (addr, topics, data)
+        })
+        .collect()
+}
+
 struct Setup<'a> {
     env: Env,
     admin: Address,
@@ -1187,7 +1216,7 @@ fn set_payout_address_emits_event() {
     // Events are (contract_address, Vec<Val> topics, Val data).
     // Our event publishes topics = (symbol_short!("payout"), id) and
     // data = (old_addr, new_addr).
-    let events = s.env.events().all();
+    let events = captured_events(&s.env);
     let payout_sym: Symbol = symbol_short!("payout");
     let matching: std::vec::Vec<_> = events
         .iter()
@@ -2310,7 +2339,7 @@ fn test_rate_client_completed_success_and_event() {
     s.escrow.rate_client(&id, &5);
 
     // Verify event topics: ("rep_cli", id) and data: (client, rating)
-    let events = s.env.events().all();
+    let events = captured_events(&s.env);
     let last = events.last().unwrap();
     assert_eq!(last.0, s.escrow.address);
     assert_eq!(last.1.len(), 2);
@@ -2712,7 +2741,7 @@ fn sequential_create_emits_seq_event_and_validates_like_create() {
         &s.token.address,
         &vec![&s.env, 100 * U],
     );
-    let events = s.env.events().all();
+    let events = captured_events(&s.env);
     let last = events.last().unwrap();
     assert_eq!(last.0, s.escrow.address);
     assert_eq!(
@@ -3930,7 +3959,7 @@ fn test_expire_unfunded_event_verification() {
     s.escrow.expire_unfunded(&id);
 
     // Assert successful expiration emits ("expired", id) with refund data (40)
-    let events = s.env.events().all();
+    let events = captured_events(&s.env);
     let last = events.last().unwrap();
     assert_eq!(last.0, s.escrow.address);
     assert_eq!(last.1.len(), 2);
@@ -3955,7 +3984,7 @@ fn test_expire_unfunded_event_verification() {
         Err(Ok(EscrowError::NotExpired))
     );
     // Verify that unsuccessful expiration does not produce an expired event for id2
-    let has_expired_event_id2 = s.env.events().all().iter().any(|e| {
+    let has_expired_event_id2 = captured_events(&s.env).iter().any(|e| {
         if e.0 == s.escrow.address && e.1.len() >= 2 {
             let sym = Symbol::try_from_val(&s.env, &e.1.get(0).unwrap());
             let topic_id = u64::try_from_val(&s.env, &e.1.get(1).unwrap());
@@ -3983,7 +4012,7 @@ fn test_expire_unfunded_zero_deposit() {
 
     s.escrow.expire_unfunded(&id);
 
-    let events = s.env.events().all();
+    let events = captured_events(&s.env);
     let last = events.last().unwrap();
     assert_eq!(last.0, s.escrow.address);
     assert_eq!(last.1.len(), 2);
@@ -4710,10 +4739,8 @@ fn metadata_writes_bump_ttl() {
 
 /// Escrow-contract events as (topics, data), in emission order.
 fn escrow_events(s: &Setup) -> std::vec::Vec<(Vec<soroban_sdk::Val>, soroban_sdk::Val)> {
-    s.env
-        .events()
-        .all()
-        .iter()
+    captured_events(&s.env)
+        .into_iter()
         .filter(|e| e.0 == s.escrow.address)
         .map(|e| (e.1, e.2))
         .collect()
@@ -4758,7 +4785,7 @@ fn init_and_paused_events_are_versioned() {
     let id = env.register(Escrow, ());
     let escrow = EscrowClient::new(&env, &id);
     escrow.initialize(&admin);
-    let ev = env.events().all().last().unwrap();
+    let ev = captured_events(&env).last().unwrap().clone();
     assert_eq!(ev.0, id);
     assert_eq!(ev.1.len(), 2);
     assert_eq!(u32::try_from_val(&env, &ev.1.get(0).unwrap()).unwrap(), EVENT_SCHEMA_V);
@@ -4769,7 +4796,7 @@ fn init_and_paused_events_are_versioned() {
     assert_eq!(Address::try_from_val(&env, &ev.2).unwrap(), admin);
 
     escrow.set_paused(&admin, &true);
-    let ev = env.events().all().last().unwrap();
+    let ev = captured_events(&env).last().unwrap().clone();
     assert_eq!(u32::try_from_val(&env, &ev.1.get(0).unwrap()).unwrap(), EVENT_SCHEMA_V);
     assert_eq!(
         Symbol::try_from_val(&env, &ev.1.get(1).unwrap()).unwrap(),
@@ -5093,11 +5120,8 @@ fn set_time(env: &Env, ts: u64) {
 }
 
 fn last_global_event(s: &Setup) -> (Vec<soroban_sdk::Val>, soroban_sdk::Val) {
-    let ev = s
-        .env
-        .events()
-        .all()
-        .iter()
+    let ev = captured_events(&s.env)
+        .into_iter()
         .filter(|e| e.0 == s.escrow.address)
         .last()
         .unwrap();
@@ -5942,7 +5966,7 @@ fn admin_transfer_events_have_topic_and_payload() {
     let new_admin = Address::generate(&env);
 
     escrow.propose_admin(&new_admin);
-    let prop = env.events().all().last().unwrap();
+    let prop = captured_events(&env).last().unwrap().clone();
     assert_eq!(prop.0, escrow.address);
     let prop_topics: Vec<soroban_sdk::Val> = (symbol_short!("adm_prop"),).into_val(&env);
     assert_eq!(prop.1, prop_topics);
@@ -5950,7 +5974,7 @@ fn admin_transfer_events_have_topic_and_payload() {
     assert_eq!(prop_data, (old_admin.clone(), new_admin.clone()));
 
     escrow.accept_admin();
-    let acc = env.events().all().last().unwrap();
+    let acc = captured_events(&env).last().unwrap().clone();
     let acc_topics: Vec<soroban_sdk::Val> = (symbol_short!("adm_acc"),).into_val(&env);
     assert_eq!(acc.1, acc_topics);
     let acc_data: (Address, Address) = FromVal::from_val(&env, &acc.2);
@@ -5958,7 +5982,7 @@ fn admin_transfer_events_have_topic_and_payload() {
 
     escrow.propose_admin(&old_admin);
     escrow.cancel_admin_proposal();
-    let cncl = env.events().all().last().unwrap();
+    let cncl = captured_events(&env).last().unwrap().clone();
     let cncl_topics: Vec<soroban_sdk::Val> = (symbol_short!("adm_cncl"),).into_val(&env);
     assert_eq!(cncl.1, cncl_topics);
     let cncl_data: Address = FromVal::from_val(&env, &cncl.2);
@@ -6347,11 +6371,8 @@ fn resign_emits_event_and_is_not_a_client_cancellation() {
     );
     s.escrow.deposit_funds(&id, &(40 * U));
     s.escrow.resign(&id);
-    let ev = s
-        .env
-        .events()
-        .all()
-        .iter()
+    let ev = captured_events(&s.env)
+        .into_iter()
         .filter(|e| e.0 == s.escrow.address)
         .last()
         .unwrap();
@@ -6559,11 +6580,8 @@ fn settlement_invalidated_by_deposit_and_events_emitted() {
     );
     s.escrow.deposit_funds(&id, &(100 * U));
     s.escrow.propose_settlement(&id, &s.freelancer, &(60 * U));
-    let ev = s
-        .env
-        .events()
-        .all()
-        .iter()
+    let ev = captured_events(&s.env)
+        .into_iter()
         .filter(|e| e.0 == s.escrow.address)
         .last()
         .unwrap();
@@ -6575,11 +6593,8 @@ fn settlement_invalidated_by_deposit_and_events_emitted() {
     assert!(s.escrow.get_settlement(&id).is_none());
     s.escrow.propose_settlement(&id, &s.client, &(50 * U));
     s.escrow.accept_settlement(&id, &s.freelancer, &(50 * U));
-    let ev = s
-        .env
-        .events()
-        .all()
-        .iter()
+    let ev = captured_events(&s.env)
+        .into_iter()
         .filter(|e| e.0 == s.escrow.address)
         .last()
         .unwrap();
@@ -6757,11 +6772,8 @@ fn invalid_pause_bits_rejected_and_only_pausers_set_flags() {
     s.escrow.grant_role(&Role::Pauser, &pauser);
     s.escrow.set_pause_flags(&pauser, &PAUSE_RELEASE);
     // Events are per invocation: inspect them before the next call.
-    let ev = s
-        .env
-        .events()
-        .all()
-        .iter()
+    let ev = captured_events(&s.env)
+        .into_iter()
         .filter(|e| e.0 == s.escrow.address)
         .last()
         .unwrap();
@@ -6902,11 +6914,8 @@ fn set_fee_cap_and_admin_only() {
     s.env.mock_all_auths();
     assert_eq!(s.escrow.get_fee_config(), (0, None));
     s.escrow.set_fee(&MAX_FEE_BPS, &treasury);
-    let ev = s
-        .env
-        .events()
-        .all()
-        .iter()
+    let ev = captured_events(&s.env)
+        .into_iter()
         .filter(|e| e.0 == s.escrow.address)
         .last()
         .unwrap();
@@ -7419,11 +7428,8 @@ fn amendment_decrease_refunds_excess() {
         .escrow
         .propose_amendment(&id, &s.client, &vec![&s.env, 50 * U, 50 * U]);
     s.escrow.accept_amendment(&id, &s.freelancer, &nonce);
-    let ev = s
-        .env
-        .events()
-        .all()
-        .iter()
+    let ev = captured_events(&s.env)
+        .into_iter()
         .filter(|e| e.0 == s.escrow.address)
         .last()
         .unwrap();

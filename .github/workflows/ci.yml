@@ -32,7 +32,11 @@ jobs:
       - name: Install toolchain (from rust-toolchain.toml)
         run: rustup show active-toolchain || rustup toolchain install
       - uses: Swatinem/rust-cache@v2
+      - name: Install Stellar CLI
+        run: |
+          curl -sL https://github.com/stellar/stellar-cli/releases/download/v30.0.1/stellar-cli-30.0.1-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          sudo mv stellar /usr/local/bin/
       - name: Build wasm
-        run: cargo build --target wasm32v1-none --release
+        run: stellar contract build
       - name: Test
-        run: cargo test
+        run: cargo test --release

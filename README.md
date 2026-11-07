@@ -42,17 +42,16 @@ maintained independently under the Covenant name.
 
 ## Live
 
-Live deployment: pending under new branding.
-
-- Contract (testnet): [`CCZMIVUBMG5SBC47SDTC32RWLBJ2HW2DCFVWJEOKCH2IFJBZGBKTXK5W`](https://stellar.expert/explorer/testnet/contract/CCZMIVUBMG5SBC47SDTC32RWLBJ2HW2DCFVWJEOKCH2IFJBZGBKTXK5W)
+- Contract (testnet): [`CCEEQECMQXMWPZYIT4QOKB2LM72IGXR3B4NE4H2NRRI4U3GRMO2I7KHA`](https://stellar.expert/explorer/testnet/contract/CCEEQECMQXMWPZYIT4QOKB2LM72IGXR3B4NE4H2NRRI4U3GRMO2I7KHA) — deployed and administered independently of TalentTrust
+- Website/API: pending under new branding (see [covenant-backend](https://github.com/motron-games-world/covenant-backend) / [covenant-frontend](https://github.com/motron-games-world/covenant-frontend))
 
 ## Deployments
 
 | Network | Contract | ID | Explorer |
 | --- | --- | --- | --- |
-| Stellar testnet | escrow | `CCZMIVUBMG5SBC47SDTC32RWLBJ2HW2DCFVWJEOKCH2IFJBZGBKTXK5W` | [stellar.expert](https://stellar.expert/explorer/testnet/contract/CCZMIVUBMG5SBC47SDTC32RWLBJ2HW2DCFVWJEOKCH2IFJBZGBKTXK5W) |
+| Stellar testnet | escrow | `CCEEQECMQXMWPZYIT4QOKB2LM72IGXR3B4NE4H2NRRI4U3GRMO2I7KHA` | [stellar.expert](https://stellar.expert/explorer/testnet/contract/CCEEQECMQXMWPZYIT4QOKB2LM72IGXR3B4NE4H2NRRI4U3GRMO2I7KHA) |
 
-The contract is initialized with admin `GA7TXEBMEPQCLHIYCWDN7RKAO5IMRD2UV7O7TZXMEW6VZUMEXNR4XBB5`.
+The contract is initialized with admin `GAJ6JBM3WRZFNWLUBPN2A2TL2WQNO5IASF6L2HLDK2KWAYACV3NFPOK6`.
 Machine-readable details are in [deployments/testnet.json](deployments/testnet.json).
 
 ## Contract interface (`contracts/escrow`)
